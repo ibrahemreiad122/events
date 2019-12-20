@@ -1,0 +1,31 @@
+<div class="jumbotron text-center">
+  <h1>All Events</h1>
+</div>
+<div class="container">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Description</th>
+        <th>Api Functions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for( var event of events ){ %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.description %></td>
+        <td>
+          <a href="/one/<%= event.slug %>" class="btn btn-primary">View</a>
+          <a href="/event/<%= event.slug %>/edit" class="btn btn-success"
+            >Update</a
+          >
+          <a href="/event/<%= event.slug %>/delete" class="btn btn-danger"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
